@@ -1,0 +1,20 @@
+{
+  "name": "passmng",
+  "version": "1.0.0",
+  "description": "Manage your passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS",
+    "NodeJS",
+    "Passwords",
+    "Manager"
+  ],
+  "author": "Maicon Giovani",
+  "license": "ISC",
+  "dependencies": {
+    "node-persist": "0.0.6"
+  }
+}
