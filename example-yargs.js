@@ -2,10 +2,10 @@ var argv = require('yargs').argv;
 var command = argv._[0];
 console.log(argv);
 
-if(command === "hello" && typeof argv.name !== "undefined"){
-    console.log("hello " + argv.name + "!");
-}else if(command === "hello"){
-    console.log('hello world!');
+if(command === "hello" && typeof argv.name !== "undefined" && typeof argv.lastname !== "undefined"){
+    console.log("hello " + argv.name + " " + argv.lastname +"!");
+}else if(command === "hello" && typeof argv.name !== "undefined"){
+    console.log('hello ' + argv.name + '!');
 }else{
-    console.log("OOPS");
+    console.log("hello world");
 }
