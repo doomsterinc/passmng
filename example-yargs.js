@@ -1,4 +1,6 @@
-var argv = require('yargs').argv;
+var argv = require('yargs')
+    .command()
+    .argv;
 var command = argv._[0];
 console.log(argv);
 
