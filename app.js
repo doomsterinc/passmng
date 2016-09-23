@@ -29,10 +29,10 @@ var argv = require('yargs')
 
 var command = argv._[0];
 
-if(command === "passMng" && (typeof argv.name !== "undefined" && argv.name !== "") && (typeof argv.username !== "undefined" && argv.username !== "") && (typeof argv.password !== "undefined" && argv.password !== "")){
+if(command === "passMng" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
 }else{
-  console.log("hello world");
+  console.log("Itens falted! Try again");
 }
 
 var createAccount = function(account){
