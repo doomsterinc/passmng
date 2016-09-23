@@ -79,12 +79,3 @@ if(command === "create" && argv.name !== "" && argv.username !== "" && argv.pass
 }else{
   console.log("Missing arguments! Try again");
 }
-
-// createAccount({
-//   name: "Facebook",
-//   username: "samemail@gmail.com",
-//   password: "Password123"
-// });
-
-// var facebookAccount = getAccount('Facebook');
-// console.log(facebookAccount);
