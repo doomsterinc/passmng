@@ -2,7 +2,7 @@ var storage = require('node-persist');
 console.log("Starting PassMng");
 storage.initSync();
 var argv = require('yargs')
-          .command('passMng', "Your password manager", function(yargs){
+          .command('create', "Salve your account details!", function(yargs){
             yargs.options({
               name : {
                 demand: true,
@@ -24,15 +24,30 @@ var argv = require('yargs')
               }
             }).help('help');
           })
+          .command('get', "Get your account details!", function(yargs){
+            yargs.options({
+              nameAccount : {
+                demand: true,
+                alias : 'n',
+                description : 'Your account',
+                type : 'string'
+              }
+            }).help('help');
+          })
           .help('help')
           .argv;
 
 var command = argv._[0];
 
 if(command === "passMng" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
+  createAccount({
+    name: argv.name,
+    username: argv.username,
+    password: argv.password
+  });
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
 }else{
-  console.log("Itens falted! Try again");
+  console.log("Missing arguments! Try again");
 }
 
 var createAccount = function(account){
