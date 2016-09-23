@@ -8,6 +8,7 @@ var argv = require('yargs')
             }
         });
     })
+    .help('help')
     .argv;
 var command = argv._[0];
 console.log(argv);
