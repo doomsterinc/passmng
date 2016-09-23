@@ -3,7 +3,8 @@ var argv = require('yargs')
         yargs.options({
             name: {
                 demand: true,
-                alias: 'n'
+                alias: 'n',
+                description: : 'Your first name goes here'
             }
         });
     })
