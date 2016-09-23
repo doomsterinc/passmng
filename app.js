@@ -1,6 +1,7 @@
 var storage = require('node-persist');
 console.log("Starting PassMng");
 storage.initSync();
+//Create metods arguments for getting data from the command line
 var argv = require('yargs')
           .command('create', "Salve your account details!", function(yargs){
             yargs.options({
