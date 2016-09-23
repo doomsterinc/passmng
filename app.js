@@ -27,9 +27,15 @@ var argv = require('yargs')
           .help('help')
           .argv;
 
-// account.name Facebook
-// account.username User123
-// account.password password123
+var command = argv._[0];
+
+if(command === "passMng" && (typeof argv.name !== "undefined" && argv.name !== "") && (typeof argv.username !== "undefined" && argv.username !== "") && (typeof argv.password !== "undefined" && argv.password !== "")){
+  console.log("hello " + argv.name + " " + argv.username + " " + argv.password + "!");
+}else{
+  console.log("hello world");
+}
+
+
 console.log(argv);
 var createAccount = function(account){
   var accounts = storage.getItemSync('accounts');
@@ -61,5 +67,5 @@ var getAccount = function(accountName){
 //   password: "Password123"
 // });
 
-var facebookAccount = getAccount('Facebook');
-console.log(facebookAccount);
+// var facebookAccount = getAccount('Facebook');
+// console.log(facebookAccount);
