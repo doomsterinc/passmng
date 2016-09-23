@@ -7,19 +7,19 @@ var argv = require('yargs')
               name : {
                 demand: true,
                 alias : 'n',
-                description : 'Your account'
+                description : 'Your account',
                 type : 'string'
               },
               username : {
                 demand: true,
                 alias : 'u',
-                description : 'Your user name'
+                description : 'Your user name',
                 type : 'string'
               },
               password : {
                 demand: true,
                 alias : 'p',
-                description : 'Your password'
+                description : 'Your password',
                 type : 'string'
               }
             }).help('help');
@@ -30,7 +30,7 @@ var argv = require('yargs')
 // account.name Facebook
 // account.username User123
 // account.password password123
-
+console.log(argv);
 var createAccount = function(account){
   var accounts = storage.getItemSync('accounts');
   if (typeof accounts === "undefined") {
