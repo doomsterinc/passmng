@@ -2,7 +2,8 @@ var argv = require('yargs')
     .command('hello', 'Greets the user', function(yargs){
         yargs.options({
             name: {
-                demand: true
+                demand: true,
+                alias: 'n'
             }
         });
     })
