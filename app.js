@@ -1,6 +1,31 @@
 var storage = require('node-persist');
 console.log("Starting PassMng");
 storage.initSync();
+var argv = require('yargs')
+          .command('passMng', "Your password manager", function(yargs){
+            yargs.options({
+              name : {
+                demand: true,
+                alias : 'n',
+                description : 'Your account'
+                type : 'string'
+              },
+              username : {
+                demand: true,
+                alias : 'u',
+                description : 'Your user name'
+                type : 'string'
+              },
+              password : {
+                demand: true,
+                alias : 'p',
+                description : 'Your password'
+                type : 'string'
+              }
+            }).help('help');
+          })
+          .help('help')
+          .argv;
 
 // account.name Facebook
 // account.username User123
