@@ -40,6 +40,7 @@ var argv = require('yargs')
 
 var command = argv._[0];
 var account;
+
 //Create account function in node-persist
 var createAccount = function(account){
   var accounts = storage.getItemSync('accounts');
@@ -52,6 +53,7 @@ var createAccount = function(account){
 
   return account;
 };
+
 //Get account function in node-persist
 var getAccount = function(accountName){
   var accounts = storage.getItemSync('accounts');
