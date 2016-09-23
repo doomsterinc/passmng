@@ -38,7 +38,8 @@ var argv = require('yargs')
           .argv;
 
 var command = argv._[0];
-
+var account;
+//Create account function in node-persist
 var createAccount = function(account){
   var accounts = storage.getItemSync('accounts');
   if (typeof accounts === "undefined") {
@@ -50,7 +51,7 @@ var createAccount = function(account){
 
   return account;
 };
-
+//Get account function in node-persist
 var getAccount = function(accountName){
   var accounts = storage.getItemSync('accounts');
   // console.log(accounts);
@@ -62,7 +63,8 @@ var getAccount = function(accountName){
   });
   return matchedAccount;
 };
-var account;
+
+//Checking data before creating and get
 if(command === "create" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
   createAccount({
     name: argv.name,
@@ -72,7 +74,7 @@ if(command === "create" && argv.name !== "" && argv.username !== "" && argv.pass
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
 }else if (command === "get" && argv.nameAccount !== "") {
   account = getAccount(argv.nameAccount);
-  console.log("Your account in: " + account.name + "\n Username: " + account.username + "\nPassword: " + account.password )
+  console.log("Your account in: " + account.name + "\nUsername: " + account.username + "\nPassword: " + account.password )
 }else{
   console.log("Missing arguments! Try again");
 }
