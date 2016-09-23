@@ -62,7 +62,7 @@ var getAccount = function(accountName){
   });
   return matchedAccount;
 };
-
+var account;
 if(command === "create" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
   createAccount({
     name: argv.name,
@@ -70,8 +70,9 @@ if(command === "create" && argv.name !== "" && argv.username !== "" && argv.pass
     password: argv.password
   });
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
-}else if (command === "get" && argv.name !== "") {
-  
+}else if (command === "get" && argv.nameAccount !== "") {
+  account = getAccount(argv.nameAccount);
+  console.log("Your account in: " + account.name + "\n Username: " + account.username + "\nPassword: " + account.password )
 }else{
   console.log("Missing arguments! Try again");
 }
