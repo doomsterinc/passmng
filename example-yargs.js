@@ -6,7 +6,7 @@ var argv = require('yargs')
                 alias: 'n',
                 description: 'Your first name goes here'
             }
-        });
+        }).help('help');
     })
     .help('help')
     .argv;
