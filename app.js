@@ -39,19 +39,6 @@ var argv = require('yargs')
 
 var command = argv._[0];
 
-if(command === "create" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
-  createAccount({
-    name: argv.name,
-    username: argv.username,
-    password: argv.password
-  });
-  console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
-}else if (command === "get" && argv.name !== "") {
-  console.log(argv.name)
-}else{
-  console.log("Missing arguments! Try again");
-}
-
 var createAccount = function(account){
   var accounts = storage.getItemSync('accounts');
   if (typeof accounts === "undefined") {
@@ -75,6 +62,19 @@ var getAccount = function(accountName){
   });
   return matchedAccount;
 };
+
+if(command === "create" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
+  createAccount({
+    name: argv.name,
+    username: argv.username,
+    password: argv.password
+  });
+  console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
+}else if (command === "get" && argv.name !== "") {
+  
+}else{
+  console.log("Missing arguments! Try again");
+}
 
 // createAccount({
 //   name: "Facebook",
