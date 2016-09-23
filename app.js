@@ -39,13 +39,15 @@ var argv = require('yargs')
 
 var command = argv._[0];
 
-if(command === "passMng" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
+if(command === "create" && argv.name !== "" && argv.username !== "" && argv.password !== ""){
   createAccount({
     name: argv.name,
     username: argv.username,
     password: argv.password
   });
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
+}else if (command === "get" && argv.name !== "") {
+  console.log(argv.name)
 }else{
   console.log("Missing arguments! Try again");
 }
