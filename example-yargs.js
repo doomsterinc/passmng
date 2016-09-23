@@ -5,6 +5,11 @@ var argv = require('yargs')
                 demand: true,
                 alias: 'n',
                 description: 'Your first name goes here'
+            },
+            lastname: {
+                demand: true,
+                alias: 'l',
+                description: 'Your last name goes here'
             }
         }).help('help');
     })
