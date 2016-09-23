@@ -4,7 +4,7 @@ var argv = require('yargs')
             name: {
                 demand: true,
                 alias: 'n',
-                description: : 'Your first name goes here'
+                description: 'Your first name goes here'
             }
         });
     })
