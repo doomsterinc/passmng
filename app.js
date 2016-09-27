@@ -77,7 +77,11 @@ if(command === "create" && argv.name !== "" && argv.username !== "" && argv.pass
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
 }else if (command === "get" && argv.nameAccount !== "") {
   account = getAccount(argv.nameAccount);
-  console.log("Your account in: " + account.name + "\nUsername: " + account.username + "\nPassword: " + account.password )
+  if (typeof account === 'undefined') {
+    console.log('Account not found!');
+  }else {
+    console.log("Your account in: " + account.name + "\nUsername: " + account.username + "\nPassword: " + account.password );
+  }
 }else{
   console.log("Missing arguments! Try again");
 }
