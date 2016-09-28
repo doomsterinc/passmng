@@ -16,7 +16,17 @@
   "author": "Maicon Giovani",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^3.1.5",
     "node-persist": "0.0.6",
     "yargs": "^3.15.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doomsterinc/passmng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/doomsterinc/passmng/issues"
+  },
+  "homepage": "https://github.com/doomsterinc/passmng#readme"
 }
