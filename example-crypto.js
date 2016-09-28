@@ -7,4 +7,5 @@ var secretKey = "123abc";
 var encryptedMessage = crypto.AES.encrypt(secretMsg, secretKey);
 console.log(encryptedMessage);
 var bytes = crypto.AES.decrypt(encryptedMessage, secretKey);
-console.log(bytes);
+var decryptedMessage = bytes.toString(crypto.enc.Utf8);
+console.log(decryptedMessage);
