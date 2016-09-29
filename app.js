@@ -58,7 +58,8 @@ var account;
 
 var getAccounts = function (masterPassword) {
   var encryptedAccounts = storage.getItemSync('accounts');
-
+  var bytes = var bytes = crypto.AES.decrypt(encryptedMessage, masterPassword);
+  var decryptedAccounts;
 };
 
 var saveAccounts = function (accounts, masterPassword) {
