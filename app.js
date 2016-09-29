@@ -74,7 +74,7 @@ var saveAccounts = function (accounts, masterPassword) {
 
 //Create account function in node-persist
 var createAccount = function(account, masterPassword){
-  var accounts;
+  var accounts = [];
   accounts.push(account);
   saveAccounts(accounts, masterPassword);
 };
