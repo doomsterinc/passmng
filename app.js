@@ -1,4 +1,6 @@
 var storage = require('node-persist');
+var crypto = require('crypto-js');
+
 console.log("Starting PassMng");
 storage.initSync();
 //Create metods arguments for getting data from the command line
@@ -55,6 +57,7 @@ var account;
 
 
 var getAccounts = function (masterPassword) {
+  var encryptedAccounts = storage.getItemSync('accounts');
 
 };
 
