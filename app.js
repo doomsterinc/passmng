@@ -1,4 +1,10 @@
-console.log('starting password manager');
+#!/usr/bin/env node
+
+console.log('Starting Password Manager');
+console.log('Commands');
+console.log('create : Create a new account');
+console.log('get : Get an existing account');
+console.log('--help : Exibe ajuda');
 
 var crypto = require('crypto-js')
 var storage = require('node-persist');
