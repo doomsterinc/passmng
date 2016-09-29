@@ -54,7 +54,7 @@ var command = argv._[0];
 var account;
 
 //Create account function in node-persist
-var createAccount = function(account){
+var createAccount = function(account, masterPassword){
   var accounts = storage.getItemSync('accounts');
   if (typeof accounts === "undefined") {
     accounts = [];
@@ -67,7 +67,7 @@ var createAccount = function(account){
 };
 
 //Get account function in node-persist
-var getAccount = function(accountName){
+var getAccount = function(accountName, masterPassword){
   var accounts = storage.getItemSync('accounts');
   // console.log(accounts);
   var matchedAccount;
@@ -85,10 +85,10 @@ if(command === "create" && argv.name !== "" && argv.username !== "" && argv.pass
     name: argv.name,
     username: argv.username,
     password: argv.password
-  });
+  }, argv.masterPassword);
   console.log("Account in " + argv.name + " with user name " + argv.username + " salved!");
 }else if (command === "get" && argv.nameAccount !== "") {
-  account = getAccount(argv.nameAccount);
+  account = getAccount(argv.nameAccount, argv.masterPassword);
   if (typeof account === 'undefined') {
     console.log('Account not found!');
   }else {
