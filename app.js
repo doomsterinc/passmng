@@ -53,18 +53,6 @@ var argv = require('yargs')
 var command = argv._[0];
 var account;
 
-//Create account function in node-persist
-var createAccount = function(account, masterPassword){
-  var accounts = storage.getItemSync('accounts');
-  if (typeof accounts === "undefined") {
-    accounts = [];
-  }
-
-  accounts.push(account);
-  storage.setItemSync('accounts', accounts);
-
-  return account;
-};
 
 var getAccounts = function (masterPassword) {
 
@@ -73,9 +61,23 @@ var getAccounts = function (masterPassword) {
 var saveAccounts = function (accounts, masterPassword) {
 
 };
+
+//Create account function in node-persist
+var createAccount = function(account, masterPassword){
+  // var accounts = storage.getItemSync('accounts');
+  // if (typeof accounts === "undefined") {
+  //   accounts = [];
+  // }
+  //
+  // accounts.push(account);
+  // storage.setItemSync('accounts', accounts);
+  //
+  // return account;
+};
+
 //Get account function in node-persist
 var getAccount = function(accountName, masterPassword){
-  var accounts = storage.getItemSync('accounts');
+  // var accounts = storage.getItemSync('accounts');
   // console.log(accounts);
   var matchedAccount;
   accounts.forEach(function(account){
