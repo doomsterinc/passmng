@@ -72,15 +72,9 @@ var saveAccounts = function (accounts, masterPassword) {
 
 //Create account function in node-persist
 var createAccount = function(account, masterPassword){
-  // var accounts = storage.getItemSync('accounts');
-  // if (typeof accounts === "undefined") {
-  //   accounts = [];
-  // }
-  //
-  // accounts.push(account);
-  // storage.setItemSync('accounts', accounts);
-  //
-  // return account;
+  var accounts;
+  accounts.push(account);
+  saveAccounts(accounts, masterPassword);
 };
 
 //Get account function in node-persist
