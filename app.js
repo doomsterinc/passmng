@@ -70,7 +70,7 @@ var getAccounts = function (masterPassword) {
 
 };
 
-var saveAccounts = function (masterPassword) {
+var saveAccounts = function (accounts, masterPassword) {
 
 };
 //Get account function in node-persist
