@@ -60,15 +60,16 @@ var getAccounts = function (masterPassword) {
   var encryptedAccount = storage.getItemSync('accounts');
   var accounts = [];
   if (typeof encryptedAccount !== "undefined") {
-    var bytes = crypto.AES.decrypt(encryptedAccounts, masterPassword);
+    var bytes = crypto.AES.decrypt(encryptedAccount, masterPassword);
     var accounts = JSON.parse(bytes.toString(crypto.enc.Utf8));
   }
   return accounts;
 };
 
 var saveAccounts = function (accounts, masterPassword) {
-  var encryptedAccount = crypto.AES.decrypt(JSON.stringify(accounts), masterPassword);
-
+  var encryptedAccounts = crypto.AES.decrypt(JSON.stringify(accounts), masterPassword);
+  storage.setItemSync('accounts', encryptedAccounts);
+  return accounts;
 };
 
 //Create account function in node-persist
