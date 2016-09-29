@@ -81,6 +81,7 @@ var createAccount = function(account, masterPassword){
 var getAccount = function(accountName, masterPassword){
   // var accounts = storage.getItemSync('accounts');
   // console.log(accounts);
+  var accounts = getAccounts(masterPassword);
   var matchedAccount;
   accounts.forEach(function(account){
     if (account.name === accountName) {
