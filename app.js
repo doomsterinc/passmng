@@ -115,13 +115,7 @@ function getAccount (accountName, masterPassword) {
 }
 
 if (command === 'create') {
-	var createdAccount = createAccount({
-		name: argv.name,
-		username: argv.username,
-		password: argv.password
-	}, argv.masterPassword);
-	console.log('Account created!');
-	console.log(createdAccount);
+	
 } else if (command === 'get') {
 	var fetchedAccount = getAccount(argv.name, argv.masterPassword);
 
