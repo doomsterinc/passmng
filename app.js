@@ -79,8 +79,6 @@ var createAccount = function(account, masterPassword){
 
 //Get account function in node-persist
 var getAccount = function(accountName, masterPassword){
-  // var accounts = storage.getItemSync('accounts');
-  // console.log(accounts);
   var accounts = getAccounts(masterPassword);
   var matchedAccount;
   accounts.forEach(function(account){
