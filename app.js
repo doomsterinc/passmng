@@ -101,6 +101,7 @@ function createAccount (account, masterPassword) {
 	return account;
 }
 
+// get accounts passing for getAccounts function
 function getAccount (accountName, masterPassword) {
 	var accounts = getAccounts(masterPassword)
 	var matchedAccount;
