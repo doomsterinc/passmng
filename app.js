@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 
+//inital help
 console.log('Starting Password Manager');
 console.log('Commands');
 console.log('create : Create a new account');
 console.log('get : Get an existing account');
 console.log('--help : Exibe ajuda');
 
+//requires
 var crypto = require('crypto-js')
 var storage = require('node-persist');
 storage.initSync();
 
+//commands with argv
 var argv = require('yargs')
 	.command('create', 'Create a new account', function (yargs) {
 		yargs.options({
