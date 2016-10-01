@@ -78,6 +78,7 @@ function getAccounts (masterPassword) {
 	return accounts;
 }
 
+//encrypt accounts in JSON and save in persist
 function saveAccounts (accounts, masterPassword) {
 	// encrypt accounts
 	var encryptedAccounts = crypto.AES.encrypt(JSON.stringify(accounts), masterPassword);
@@ -89,6 +90,7 @@ function saveAccounts (accounts, masterPassword) {
 	return accounts;
 }
 
+// create account and passing for the saveAccounts function
 function createAccount (account, masterPassword) {
 	var accounts = getAccounts(masterPassword);
 
