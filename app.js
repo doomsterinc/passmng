@@ -115,6 +115,7 @@ function getAccount (accountName, masterPassword) {
 	return matchedAccount;
 }
 
+//logic for save, get and show accounts
 if (command === 'create') {
 	try {
     var createdAccount = createAccount({
