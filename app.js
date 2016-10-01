@@ -62,18 +62,7 @@ var argv = require('yargs')
 	.argv;
 var command = argv._[0];
 
-// create
-//     --name
-//     --username
-//     --password
-
-// get
-//     --name
-
-// account.name Facebook
-// account.username User12!
-// account.password Password123!
-
+//get accounts in persist and decrypted in js object
 function getAccounts (masterPassword) {
 	// use getItemSync to fetch accounts
 	var encryptedAccount = storage.getItemSync('accounts');
