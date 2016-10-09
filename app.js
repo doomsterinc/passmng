@@ -7,7 +7,7 @@ console.log('create : Create a new account');
 console.log('get : Get an existing account');
 console.log('--help : Exibe ajuda');
 
-//requires
+//requires of system
 var crypto = require('crypto-js')
 var storage = require('node-persist');
 storage.initSync();
@@ -99,7 +99,7 @@ function createAccount (account, masterPassword) {
 	saveAccounts(accounts, masterPassword);
 
 	return account;
-}
+};
 
 // get accounts passing for getAccounts function
 function getAccount (accountName, masterPassword) {
@@ -113,7 +113,7 @@ function getAccount (accountName, masterPassword) {
 	});
 
 	return matchedAccount;
-}
+};
 
 //logic for save, get and show accounts
 if (command === 'create') {
